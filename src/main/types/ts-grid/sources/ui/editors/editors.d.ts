@@ -1,7 +1,8 @@
 import { IRendererConfig, ICol, IEditor } from '../../types';
 
+// eslint-disable-next-line import/prefer-default-export
 export declare function getEditor(
-  row: any,
+  row: never,
   col: ICol,
   conf: IRendererConfig
 ): IEditor;

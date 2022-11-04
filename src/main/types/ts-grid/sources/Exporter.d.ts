@@ -1,3 +1,4 @@
+// eslint-disable-next-line import/no-cycle
 import { ICsvExportConfig, IGrid, IXlsxExportConfig } from './types';
 
 // eslint-disable-next-line import/prefer-default-export
@@ -7,11 +8,11 @@ export declare class Exporter {
   constructor(_view: IGrid);
   xlsx(config?: IXlsxExportConfig): {
     name: string;
-    columns: any[];
-    header: any[][];
+    columns: never[];
+    header: never[][];
     data: string[][];
     styles: {
-      cells: any[];
+      cells: never[];
       css: {
         default: {
           color: string;

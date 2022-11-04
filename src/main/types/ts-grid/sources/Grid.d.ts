@@ -7,7 +7,6 @@ import {
   DragEvents,
   IDataCollection,
   IDataEventsHandlersMap,
-  IDataItem,
   IDragEventsHandlersMap,
 } from '../../ts-data';
 import { Exporter } from './Exporter';
@@ -23,18 +22,17 @@ import {
   IEventHandlersMap,
   IGrid,
   IGridConfig,
-  IRow,
   IScrollState,
   ISelection,
   ISpan,
   GridSystemEvents,
   ISystemEventHandlersMap,
-  IColumnsWidth,
   ISortingState,
   SortFunction,
 } from './types';
 import { Combobox } from '../../ts-combobox';
 
+// eslint-disable-next-line import/prefer-default-export
 export declare class Grid extends View implements IGrid {
   data: IDataCollection;
 
@@ -59,17 +57,11 @@ export declare class Grid extends View implements IGrid {
 
   protected _events: IEventSystem<GridSystemEvents, ISystemEventHandlersMap>;
 
-  protected _htmlEvents: any;
+  protected _htmlEvents: never;
 
   private _sortDir;
 
   private _sortBy;
-
-  private _filterData;
-
-  protected _activeFilters: {};
-
-  private _hiddenFilters;
 
   constructor(container: HTMLElement | string, config?: IGridConfig);
   destructor(): void;
@@ -99,45 +91,14 @@ export declare class Grid extends View implements IGrid {
   getHeaderFilter(colId: Id): HTMLElement | Combobox;
   /** @deprecated See a documentation: https://docs.dhtmlx.com/ */
   edit(rowId: Id, colId: Id, editorType?: EditorType): void;
-  protected _createView(): any;
+  // eslint-disable-next-line no-underscore-dangle
   protected _parseColumns(configChanged?: boolean): void;
-  protected _parseData(): void;
-  protected _createCollection(prep: (data: any[]) => any[]): void;
-  protected _getRowIndex(rowId: Id): number;
+  // eslint-disable-next-line no-underscore-dangle
   protected _setEventHandlers(): void;
-  protected _addEmptyRow(): void;
+  // eslint-disable-next-line no-underscore-dangle
   protected _sort(by: Id, dir?: Dirs, sortAs?: SortFunction): void;
+  // eslint-disable-next-line no-underscore-dangle
   protected _clearTouchTimer(): void;
+  // eslint-disable-next-line no-underscore-dangle
   protected _checkFilters(): void;
-  protected _adjustColumns(): void;
-  protected _prepareData(
-    data: IDataItem[] | IDataCollection
-  ): any[] | IDataItem[];
-  protected _adjustColumnsWidth(
-    rows: IRow[],
-    cols: ICol[],
-    adjust?: IAdjustBy
-  ): IColumnsWidth;
-  protected _prepareColumnData(data: any, type: 'header' | 'footer'): IRow[];
-  private _dragStart;
-
-  private _getColumn;
-
-  private _init;
-
-  private _attachDataCollection;
-
-  private _setMarks;
-
-  private _checkMarks;
-
-  private _removeMarks;
-
-  private _detectColsTypes;
-
-  private _destroyContent;
-
-  private _render;
-
-  private _initHotKey;
 }
