@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - run: sudo chown docker:docker .
+      - run: sudo chown user:user .
       - uses: actions/checkout@v3
       - uses: neverendingqs/gh-action-tag-on-npm-version@master
         with:
