@@ -12,6 +12,7 @@ jobs:
 
     steps:
       - run: sudo chown root:root .
-      - run: ls -laR /__w
       - uses: actions/checkout@v3
       - uses: neverendingqs/gh-action-tag-on-npm-version@master
+        with:
+          git-user-email: (( $GITHUB_ACTOR ))
