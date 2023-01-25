@@ -4,8 +4,8 @@
 name: shared-ops-tool
 
 on:
-  release:
-    types: [created]
+  push:
+    
 
 jobs:
   build:
