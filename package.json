@@ -1,6 +1,6 @@
 {
   "name": "shared-ops-tool",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Shared Ops Tool",
   "main": "./src/main/main.ts",
   "scripts": {
