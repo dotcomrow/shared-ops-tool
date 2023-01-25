@@ -18,6 +18,13 @@ jobs:
       - run: npm ci
       - run: npm test
 
+  buildx:
+    runs-on: ubuntu-latest
+    needs: "build"
+    steps:
+      - name: Tag on version change
+        uses: neverendingqs/gh-action-tag-on-npm-version@v1.0.1
+
   publish-npm:
     needs: build
     runs-on: ubuntu-latest
