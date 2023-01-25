@@ -15,14 +15,10 @@ jobs:
       - run: |
           pwd
           ls -al
-          git fetch --tags
-
-          if ! git tag | grep "${TAG}"; then
-            git config user.name ${GIT_USER_NAME}
-            git config user.email ${GIT_USER_EMAIL}
-
-            git tag -a ${TAG} -m ${TAG}
-            git push --follow-tags
+          sudo git fetch --tags
+          if ! sudo git tag | grep "${TAG}"; then
+            sudo git tag -a ${TAG} -m ${TAG}
+            sudo git push --follow-tags
           else
             echo "'${TAG}' already exists. No action taken."
           fi
