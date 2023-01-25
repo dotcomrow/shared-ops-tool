@@ -4,7 +4,10 @@
 name: shared-ops-tool
 
 on:
-  push:
+  workflow_run:
+    workflows: ["Tag Release"]
+    types:
+      - completed
     
 
 jobs:
@@ -17,15 +20,6 @@ jobs:
           node-version: 16
       - run: npm ci
       - run: npm test
-
-  buildx:
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
-      - uses: actions/checkout@v3
-      - run: git config --global --add safe.directory '*'
-      - name: Tag on version change
-        uses: neverendingqs/gh-action-tag-on-npm-version@v1.0.1
 
   publish-npm:
     needs: build
