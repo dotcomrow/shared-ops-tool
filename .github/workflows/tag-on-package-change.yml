@@ -11,8 +11,17 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - run: sudo chown user:user .
       - uses: actions/checkout@v3
-      - uses: neverendingqs/gh-action-tag-on-npm-version@master
-        with:
-          git-user-email: (( $GITHUB_ACTOR ))
+      - run: |
+          git fetch --tags
+
+          if ! git tag | grep "${TAG}"; then
+            git config user.name ${GIT_USER_NAME}
+            git config user.email ${GIT_USER_EMAIL}
+
+            git tag -a ${TAG} -m ${TAG}
+            git push --follow-tags
+          else
+            echo "'${TAG}' already exists. No action taken."
+          fi
+
