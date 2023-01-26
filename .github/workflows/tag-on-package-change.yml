@@ -5,6 +5,9 @@ on:
       - master
     paths:
       - package.json
+
+permissions: write-all
+  
 jobs:
   tag-npm-release:
     name: Tag new npm package releases
