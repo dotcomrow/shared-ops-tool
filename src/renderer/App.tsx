@@ -6,8 +6,7 @@ export default function App() {
     <div
       /* eslint-disable-next-line react/no-danger */
       dangerouslySetInnerHTML={{
-        __html:
-          "<iframe src='https://mephmanx.github.io/csb-3zsiwp/' class='container'/>",
+        __html: "<iframe src='https://k09ml1.csb.app/' class='container'/>",
       }}
     />
   );
