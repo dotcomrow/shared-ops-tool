@@ -1,3 +1,4 @@
+import * as React from 'react';
 import './App.css';
 
 export default function App() {
@@ -6,7 +7,7 @@ export default function App() {
       /* eslint-disable-next-line react/no-danger */
       dangerouslySetInnerHTML={{
         __html:
-          "<iframe src='https://mephmanx.github.io/csb-tj0z19/' class='container'/>",
+          "<iframe src='https://mephmanx.github.io/csb-3zsiwp/' class='container'/>",
       }}
     />
   );

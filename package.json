@@ -1,6 +1,6 @@
 {
   "name": "shared-ops-tool",
-  "version": "1.0.0",
+  "version": "1.0.21",
   "description": "Shared Ops Tool",
   "main": "./src/main/main.ts",
   "scripts": {
@@ -113,6 +113,12 @@
         }
       }
     ]
+  },
+  "jest": {
+    "testEnvironment": "jsdom",
+    "moduleNameMapper": {
+      "\\.(css|scss)$": "<rootDir>/__mocks__/styleMock.js"
+    }
   },
   "repository": {
     "type": "git",
